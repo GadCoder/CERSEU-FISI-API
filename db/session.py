@@ -11,6 +11,17 @@ SQLALCHEMY_DATABASE_URL = "sqlite:///sql_app.db"
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
 )
+
+
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
 
 Base = declarative_base()  # La clase base para definir los ORM models
