@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-
+from typing import Optional
 
 class CourseTypeBase(BaseModel):
     pass
@@ -14,3 +14,6 @@ class CourseType(CourseTypeBase):
 
     class Config:
         orm_mode = True
+
+class CourseTypeUpdate(BaseModel):
+    course_type: Optional[str] = None

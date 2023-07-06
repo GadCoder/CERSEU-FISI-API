@@ -22,4 +22,3 @@ class Course(CourseBase):
 class CourseUpdate(BaseModel):
     course_name: Optional[str] = None
     id_course_type: Optional[int] = None
-    id_course_type: Optional[int] = None
