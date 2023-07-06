@@ -9,5 +9,5 @@ class Course(Base):
                        index=True, autoincrement=True)
     course_name = Column(String)
 
-    id_teacher = Column(Integer, ForeignKey("teacher.id_teacher"))
+    id_teacher = Column(Integer, ForeignKey("teacher.id_teacher"), nullable=True)
     id_course_type = Column(Integer, ForeignKey("course_type.id_course_type"))

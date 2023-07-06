@@ -4,6 +4,7 @@ from typing import Optional
 
 class CourseBase(BaseModel):
     course_name: str
+    id_course_type: int
 
 
 class CourseCreate(CourseBase):
@@ -17,3 +18,8 @@ class Course(CourseBase):
 
     class Config:
         orm_mode = True
+        
+class CourseUpdate(BaseModel):
+    course_name: Optional[str] = None
+    id_course_type: Optional[int] = None
+    id_course_type: Optional[int] = None
