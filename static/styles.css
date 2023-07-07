@@ -1,0 +1,13 @@
+.option-container {
+  border: 2px solid black;
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  padding: 1em;
+}
+.img-container {
+  width: 250px;
+  height: auto;
+  position: relative;
+  margin-bottom: 1em;
+}

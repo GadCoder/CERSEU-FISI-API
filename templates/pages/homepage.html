@@ -1,0 +1,79 @@
+{% extends "shared/base.html" %} {% block title %}
+<title>CERSEU-FISI</title>
+<link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet" />
+{% endblock %} {% block content %}
+<div
+  class="container-fluid d-flex justify-content-center align-items-center vh-100"
+>
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-6 option-container m-3">
+        <div class="row">
+          <div class="img-container">
+            <img
+              src="{{ url_for('static', path='/images/admin.png') }}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <a href="/adminpage">
+            <h3 class="text-center">Administrador</h3>
+          </a>
+        </div>
+      </div>
+      <div class="col-6 option-container m-3">
+        <div class="row">
+          <div class="img-container">
+            <img
+              src="{{ url_for('static', path='/images/trabajador.png') }}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <a href="">
+            <h3 class="text-center link-secondary">Trabajador de área</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-6 option-container m-3">
+        <div class="row">
+          <div class="img-container">
+            <img
+              src="{{ url_for('static', path='/images/profesor.png') }}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <a href="">
+            <h3 class="text-center link-secondary">Profesor</h3>
+          </a>
+        </div>
+      </div>
+      <div class="col-6 option-container m-3">
+        <div class="row">
+          <div class="img-container">
+            <img
+              src="{{ url_for('static', path='/images/estudiante.jpg') }}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <a href="">
+            <h3 class="text-center link-secondary">Estudiante</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

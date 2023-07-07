@@ -1,0 +1,64 @@
+{% extends "shared/base.html" %} {% block title %}
+<title>CERSEU-FISI</title>
+<link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet" />
+{% endblock %} {% block content %}
+<div
+  class="container-fluid d-flex justify-content-center align-items-center vh-100"
+>
+  <div class="container">
+    <a href="/">
+      <h3>Regresar</h3>
+    </a>
+    <h1>Administración de profesores</h1>
+    <table class="table table-striped mt-3">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Disponiblidad</th>
+        <th scope="col">Cursos</th>
+        <th scope="col">Asignar</th>
+      </tr>
+      {% for item in teacher_data %}
+      <tr>
+        <td>{{ item.id_teacher }}</td>
+        <td>{{ item.names }}</td>
+        <td>{{ item.lastnames }}</td>
+        <td>{{ item.is_available }}</td>
+        <td>
+            <select
+            class="form-select curso-select"
+            aria-label="Default select example"
+            >
+            <option selected>Cursos</option></option>
+            {% for item in courses_data %}
+            <option value="1">{{item.course_name}}</option>
+            {% endfor %}
+          </select>
+      </td>
+      <td>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Asignar</button>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Curso asignado</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Se asignó curso al docente seleccionado
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
